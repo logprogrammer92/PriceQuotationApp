@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations; // Required for data annotations
+
 namespace PriceQuotationApp.Models;
 
 public class PriceQuote

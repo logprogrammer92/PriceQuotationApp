@@ -22,7 +22,7 @@ namespace PriceQuotationApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult index(PriceQuote priceQuote)
+        public IActionResult Index(PriceQuote priceQuote)
         {
             if (ModelState.IsValid)
             {
