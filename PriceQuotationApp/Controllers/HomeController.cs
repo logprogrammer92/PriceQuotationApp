@@ -15,12 +15,25 @@ namespace PriceQuotationApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            // Initialize a new PriceQuote object to pass to the view
+            PriceQuote priceQuote = new();
+            // Pass the model to the view
+            return View(priceQuote);
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult Index(PriceQuote priceQuote)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                // Process the valid quote
+                return View(priceQuote);
+            }
+            else
+            {
+                // The model is invalid, so we return the Index view with validation errors
+                return View(priceQuote);
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
