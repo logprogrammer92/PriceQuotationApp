@@ -19,10 +19,12 @@ public class PriceQuote
     /// <summary>
     /// The amount of the discount applied to the subtotal
     /// </summary>
+    [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
     public decimal DiscountAmount => Subtotal * (Discount / 100);
 
     /// <summary>
     /// The total amount after applying the discount to the subtotal.
     /// </summary>
+    [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
     public decimal Total => Subtotal - DiscountAmount;
 }
